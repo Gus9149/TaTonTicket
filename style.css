@@ -77,7 +77,8 @@ p { margin: 0 0 1em; }
 .surtitre { text-transform: uppercase; letter-spacing: .12em; font-size: .8rem; font-weight: 700; color: var(--laiton-fonce); margin-bottom: .8em; }
 .chapeau { font-size: 1.2rem; color: var(--texte-doux); max-width: 34em; }
 .actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-top: 28px; }
-.metiers { display: flex; flex-wrap: wrap; gap: 8px; margin: 22px 0 0; padding: 0; list-style: none; }
+.mention-france { margin: 16px 0 0; font-size: .9rem; color: var(--texte-doux); }
+.metiers {display: flex; flex-wrap: wrap; gap: 8px; margin: 22px 0 0; padding: 0; list-style: none; }
 .metiers li { background: var(--creme); border: 1px solid var(--bord); padding: 4px 12px; border-radius: 999px; font-size: .9rem; color: var(--cuir); }
 
 /* Emplacement de capture d'écran */
