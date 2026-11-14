@@ -249,7 +249,53 @@
       <div class="conteneur">
         <h2>Une question, une idée ?</h2>
         <p class="intro">Vous êtes artisan et vous voulez être prévenu du lancement, ou nous dire ce qui vous manque au comptoir ? Écrivez-nous.</p>
-        <p class="courriel"><a href="mailto:support.tatonticket@gmail.com">support.tatonticket@gmail.com</a></p>
+
+        <!-- data-endpoint : URL /exec du script outils/formulaire-contact (vide = ouverture de l'application e-mail) -->
+        <form id="formulaire-contact" class="formulaire" data-endpoint="" data-courriel="support.tatonticket@gmail.com" novalidate>
+          <div class="champs-ligne">
+            <p class="champ-form">
+              <label for="f-nom">Nom</label>
+              <input id="f-nom" name="nom" type="text" autocomplete="name" maxlength="100" required>
+            </p>
+            <p class="champ-form">
+              <label for="f-email">E-mail</label>
+              <input id="f-email" name="email" type="email" autocomplete="email" maxlength="200" required>
+            </p>
+          </div>
+          <div class="champs-ligne">
+            <p class="champ-form">
+              <label for="f-sujet">Sujet</label>
+              <select id="f-sujet" name="sujet">
+                <option>Question</option>
+                <option>Être prévenu du lancement</option>
+                <option>Suggestion</option>
+                <option>Partenariat</option>
+                <option>Autre</option>
+              </select>
+            </p>
+            <p class="champ-form">
+              <label for="f-metier">Métier <span class="facultatif">(facultatif)</span></label>
+              <input id="f-metier" name="metier" type="text" maxlength="100" placeholder="Cordonnier, retoucheuse…" list="metiers-liste">
+              <datalist id="metiers-liste">
+                <option value="Cordonnier"><option value="Retoucheur"><option value="Pressing"><option value="Horloger"><option value="Réparateur">
+              </datalist>
+            </p>
+          </div>
+          <p class="champ-form">
+            <label for="f-message">Message</label>
+            <textarea id="f-message" name="message" rows="6" maxlength="5000" required></textarea>
+          </p>
+          <p class="piege" aria-hidden="true">
+            <label for="f-site">Ne pas remplir</label>
+            <input id="f-site" name="site_web" type="text" tabindex="-1" autocomplete="off">
+          </p>
+          <input type="hidden" name="t" value="">
+          <p class="mention-form">Vos informations servent uniquement à vous répondre. Voir la <a href="confidentialite.html">politique de confidentialité</a>.</p>
+          <button type="submit" class="bouton-principal">Envoyer le message</button>
+          <p class="etat-form" role="status" aria-live="polite"></p>
+        </form>
+
+        <p class="courriel-alt">Vous pouvez aussi écrire à <a href="mailto:support.tatonticket@gmail.com">support.tatonticket@gmail.com</a></p>
       </div>
     </section>
   </main>
@@ -264,5 +310,6 @@
       </nav>
     </div>
   </footer>
+  <script src="contact.js" defer></script>
 </body>
 </html>

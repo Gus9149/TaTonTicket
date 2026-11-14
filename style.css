@@ -150,6 +150,37 @@ section { scroll-margin-top: 72px; }
 .contact .intro { margin-left: auto; margin-right: auto; }
 .courriel { font-size: clamp(1.05rem, 4.2vw, 1.4rem); font-weight: 700; word-break: break-all; }
 
+/* Formulaire de contact */
+.formulaire {
+  max-width: 680px; margin: 0 auto; text-align: left;
+  background: var(--blanc); border: 1px solid var(--bord); border-radius: var(--rayon); padding: 28px;
+}
+.champs-ligne { display: grid; grid-template-columns: 1fr 1fr; gap: 0 18px; }
+.champ-form { margin: 0 0 18px; }
+.champ-form label { display: block; font-weight: 600; font-size: .93rem; color: var(--cuir); margin-bottom: 6px; }
+.facultatif { font-weight: 400; color: var(--texte-doux); }
+.formulaire input, .formulaire select, .formulaire textarea {
+  width: 100%; font: inherit; font-size: 1rem; color: var(--texte);
+  background: var(--papier); border: 1.5px solid var(--bord); border-radius: 10px; padding: 11px 13px;
+}
+.formulaire textarea { resize: vertical; min-height: 140px; }
+.formulaire input:focus, .formulaire select:focus, .formulaire textarea:focus {
+  outline: none; border-color: var(--laiton-fonce); box-shadow: 0 0 0 3px rgba(201, 164, 106, .3);
+}
+.formulaire [aria-invalid="true"] { border-color: #b3261e; }
+.piege { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+.mention-form { font-size: .88rem; color: var(--texte-doux); margin: 0 0 18px; }
+.bouton-principal {
+  font: inherit; font-weight: 600; cursor: pointer; border: 0;
+  background: var(--cuir); color: var(--creme); padding: 13px 26px; border-radius: 999px;
+}
+.bouton-principal:hover { background: var(--cuir-2); }
+.bouton-principal:disabled { opacity: .6; cursor: wait; }
+.etat-form { margin: 14px 0 0; font-weight: 600; min-height: 1.6em; }
+.etat-form.ok { color: #2e6b2f; }
+.etat-form.erreur { color: #b3261e; }
+.courriel-alt { margin-top: 22px; color: var(--texte-doux); font-size: .95rem; overflow-wrap: anywhere; }
+
 /* Pied de page */
 .pied { background: var(--cuir); color: #d9cbb2; padding: 36px 0; font-size: .92rem; }
 .pied .conteneur { display: flex; flex-wrap: wrap; gap: 16px 32px; justify-content: space-between; align-items: center; }
@@ -175,6 +206,8 @@ section { scroll-margin-top: 72px; }
   .galerie { grid-template-columns: 1fr 1fr; }
   .galerie figure:last-child { display: none; }
   .nav { display: none; }
+  .champs-ligne { grid-template-columns: 1fr; }
+  .formulaire { padding: 20px 16px; }
   .section { padding: 56px 0; }
 }
 @media (max-width: 420px) {
